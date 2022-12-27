@@ -39,7 +39,7 @@ useEffect(() => {
   
 }, [])
 
-  const filteredPaintings = paintings.filter(painting => painting.painting_title.toLowerCase().includes(searchTerm))
+  const filteredPaintings = paintings.filter(painting => (painting.painting_title.toLowerCase().includes(searchTerm.toLowerCase())))
 
   return (
     <div className="App">
