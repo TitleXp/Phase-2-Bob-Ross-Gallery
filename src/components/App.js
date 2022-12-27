@@ -4,10 +4,13 @@ import '../App.css';
 import { useState, useEffect } from 'react';
 import Header from "./Header";
 import PaintingsContainer from "./PaintingsContainer";
+import SearchBar from './Searchbar';
 
 
 function App() {
- const [paintings, setPaintings]=useState([])
+
+  const [paintings, setPaintings]=useState([])
+  const [searchTerm, setSearchTerm] = useState("")
 
 // useEffect(() => {
 //   const fetchData = () => {
@@ -36,11 +39,15 @@ useEffect(() => {
   
 }, [])
 
+  const filteredPaintings = paintings.filter(painting => painting.painting_title.toLowerCase().includes(searchTerm))
 
   return (
     <div className="App">
    <Header/>
-  <PaintingsContainer paintings={paintings}/>
+   <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+   <PaintingsContainer paintings={filteredPaintings}/>
+   
+
     </div>
   );
 }
