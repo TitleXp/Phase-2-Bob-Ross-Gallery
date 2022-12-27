@@ -1,4 +1,4 @@
-import Painting from "./Planeteer";
+import Painting from "./Painting";
 
 function PaintingsContainer({paintings}) {
    const  mapPaintings= paintings.map(painting => (
