@@ -4,9 +4,7 @@ import '../App.css';
 import { useState, useEffect } from 'react';
 import Header from "./Header";
 import PaintingsContainer from "./PaintingsContainer";
-import { useState, useEffect } from 'react';
-import Header from "./Header";
-import PaintingsContainer from "./PaintingsContainer";
+
 
 function App() {
  const [paintings, setPaintings]=useState([])
