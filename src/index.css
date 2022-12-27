@@ -30,7 +30,7 @@ img {
 .cards__item {
   display: flex;
   padding: 1rem;
-  width: 25%;
+  width: 20%;
 }
 
 .card {
@@ -55,14 +55,14 @@ img {
   background-size: cover;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  filter: contrast(70%);
+  filter: contrast(100%);
   overflow: hidden;
   position: relative;
   transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);
 }
 
 .card__image:hover{
-  filter: contrast(100%);
+  filter: contrast(80%);
 }
 
 .card__title {

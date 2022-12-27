@@ -35,10 +35,10 @@ function Painting ({ painting }) {
             <a className="card__detail">Colors: {painting.colors} </a> */}
 
             <div className="card__content">
-                <a href={painting.youtube_src}>
+                <p><a href={painting.youtube_src} className="card__title">
                     Season: {painting.season} Episode:{painting.episode}
                 </a>
-                <div className="card__detail"></div> 
+                </p>
             </div>
     </div>
     
