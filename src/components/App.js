@@ -25,21 +25,6 @@ useEffect(() => {
   
 }, [])
 
- const [paintings, setPaintings]=useState([])
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const resp = await fetch("http://localhost:3000/paintings")
-      const paintings = await resp.json()
-      setPaintings(paintings)
-    } catch (error) {
-      alert(error)
-    }
-   }
-
-   fetchData()
-  
-}, [])
 
   return (
     <div className="App">
