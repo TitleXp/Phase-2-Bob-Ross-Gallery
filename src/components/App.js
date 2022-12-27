@@ -1,7 +1,25 @@
 import logo from '../logo.svg';
 import '../App.css';
+import { useState, useEffect } from 'react';
+// import Header from src/components/Header.js
 
 function App() {
+ const [paintings, setPaintings]=useState([])
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const resp = await fetch("http://localhost:3000/paintings")
+      const paintings = await resp.json()
+      setPaintings(paintings)
+    } catch (error) {
+      alert(error)
+    }
+   }
+
+   fetchData()
+  
+}, [])
+
   return (
     <div className="App">
       <header className="App-header">
