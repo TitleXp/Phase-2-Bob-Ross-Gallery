@@ -8,6 +8,19 @@ import PaintingsContainer from "./PaintingsContainer";
 
 function App() {
  const [paintings, setPaintings]=useState([])
+
+// useEffect(() => {
+//   const fetchData = () => {
+//     fetch("http://localhost:3000/paintings")
+//     .then(response => response.json())
+//     .then(painting => setPaintings(painting))
+//     .catch(error => alert(error))
+//   }
+
+//   fetchData()
+
+// }, []);
+
 useEffect(() => {
   const fetchData = async () => {
     try {
