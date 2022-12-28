@@ -45,7 +45,7 @@ useEffect(() => {
     <div className="App">
    <Header/>
    <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-   <PaintingsContainer paintings={filteredPaintings}/>
+   <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
    
 
     </div>
