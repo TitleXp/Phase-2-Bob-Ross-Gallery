@@ -5,7 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: wheat; */
+  /* background-image: url("https://www.bobross.com/content/bob_ross_img.png") */
+  background-image: repeating-radial-gradient(blue,red, wheat, black);
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -13,7 +17,7 @@ code {
 }
 
 img {
-  height: auto;
+
   max-width: 100%;
   vertical-align: middle;
 }
@@ -30,7 +34,7 @@ img {
 .cards__item {
   display: flex;
   padding: 1rem;
-  width: 25%;
+  width: 20%;
 }
 
 .card {
@@ -55,20 +59,20 @@ img {
   background-size: cover;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  filter: contrast(70%);
+  filter: contrast(100%);
   overflow: hidden;
   position: relative;
   transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);
 }
 
 .card__image:hover{
-  filter: contrast(100%);
+  border: 1px solid #777;
 }
 
 .card__title {
   color: #696969;
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 3000;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -83,4 +87,10 @@ img {
 .card__detail {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.Bob-Ross {
+  width: 100px;
+  float: center;
+  margin: 5px
 }
