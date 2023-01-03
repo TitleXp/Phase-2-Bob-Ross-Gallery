@@ -11853,7 +11853,21 @@
   ],
 
   "reviews": [
-    
+    {
+      "id": 1,
+      "comment": "Wow! Great tutorial!",
+      "likes": 2
+    },
+    {
+      "id": 2,
+      "comment": "10/10 would watch again!",
+      "likes": 4
+    },
+    {
+      "id": 3,
+      "comment": "What is dis",
+      "likes": 1
+    }
   ]
 }
 
