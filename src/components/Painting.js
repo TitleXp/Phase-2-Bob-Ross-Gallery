@@ -35,7 +35,6 @@ function Painting ({ painting, setPaintings }) {
         else{setFavorite(currentFav => currentFav.filter(item => item.id !== id))}
        
        }
-
        
 
     const handleClick = () => {
@@ -48,7 +47,7 @@ function Painting ({ painting, setPaintings }) {
         {
             method: "DELETE"
         })
-        setPaintings(currentPaintings => currentPaintings.filter(painting => painting.id !== id))
+        setPaintings(currentPaintings => currentPaintings.filter(element => element.id !== painting.id))
     }
 
     const { colors, num_colors, painting_title, img_src } = finalPainting
@@ -70,8 +69,8 @@ function Painting ({ painting, setPaintings }) {
                 </a>
                 </p>
             </div>
-            <button className="deleteButton" onClick={handleDelete}>Buy Painting</button>
-            <button className="favoriteButton" onClick={addToFavorite}>Add To Gallery</button>
+           <span> <button className="deleteButton" onClick={handleDelete}>Buy Painting</button>
+            <button className="favoriteButton" onClick={addToFavorite}>Add To Gallery</button></span>
     </div>
 </li>
     );

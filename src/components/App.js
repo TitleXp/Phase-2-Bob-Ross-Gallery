@@ -48,13 +48,14 @@ useEffect(() => {
 
   return (
     <div className="App">
+      <Header/>
       <Switch>
         <Route path="/paintings/:id">
           <Painting />
         </Route>
 
         <Route path="/">
-          <Header/>
+          
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
         </Route>
