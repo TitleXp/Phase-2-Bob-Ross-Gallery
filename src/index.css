@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* background-color: wheat; */
   /* background-image: url("https://www.bobross.com/content/bob_ross_img.png") */
-  background-image: repeating-radial-gradient(blue,red, wheat, black);
+  background-color: white;
 }
 
 
@@ -28,7 +28,7 @@ img {
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
-  padding: 0;
+  justify-content: center;
 }
 
 .cards__item {
@@ -93,4 +93,10 @@ img {
   width: 100px;
   float: center;
   margin: 5px
+}
+
+#searchBar {
+  z-index: -1;
+  color: gray;
+  cursor: none;
 }

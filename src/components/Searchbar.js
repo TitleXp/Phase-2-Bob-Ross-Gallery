@@ -8,7 +8,7 @@ function SearchBar({searchTerm, setSearchTerm}) {
 
     return(
         <div>  
-            <input type="text" value={searchTerm} onChange={handlechange} placeholder="Type your favorite art here!"/>
+            <input className="searchBar"type="text" value={searchTerm} onChange={handlechange} placeholder="Search"/>
         </div>
     )
 };

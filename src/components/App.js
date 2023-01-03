@@ -5,6 +5,11 @@ import { useState, useEffect } from 'react';
 import Header from "./Header";
 import PaintingsContainer from "./PaintingsContainer";
 import SearchBar from './Searchbar';
+import Painting from "./Painting";
+import ErrorPage from "./ErrorPage";
+
+
+import { Switch, Route } from "react-router-dom"
 
 
 function App() {
@@ -43,11 +48,21 @@ useEffect(() => {
 
   return (
     <div className="App">
-   <Header/>
-   <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-   <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
-   
+      <Switch>
+        <Route path="/paintings/:id">
+          <Painting />
+        </Route>
 
+        <Route path="/">
+          <Header/>
+          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
+        </Route>
+
+        <Route>
+            <ErrorPage />
+          </Route>
+      </Switch>
     </div>
   );
 }
