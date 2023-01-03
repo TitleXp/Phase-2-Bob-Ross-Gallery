@@ -19,7 +19,8 @@ function Painting ({ painting, setPaintings }) {
       }, [painting, id]);
 
       const finalPainting = !paint ? painting: paint
-    //   console.log(finalPainting)
+      console.log(finalPainting)
+      console.log(id)
       
       if (!finalPainting) {
         return <h3>Loading...</h3>
