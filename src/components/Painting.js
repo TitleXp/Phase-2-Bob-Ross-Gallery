@@ -48,8 +48,11 @@ function Painting ({ painting, setPaintings }) {
         {
             method: "DELETE"
         })
-        setPaintings(currentPaintings => currentPaintings.filter(painting => painting.id !== id))
+        setPaintings(currentPaintings => currentPaintings.filter(element => element.id !== painting.id))
     }
+
+
+    
 
     const { colors, num_colors, painting_title, img_src } = finalPainting
     return (

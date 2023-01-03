@@ -53,7 +53,7 @@ useEffect(() => {
           <Painting />
         </Route>
 
-        <Route path="/">
+        <Route exact path="/">
           <Header/>
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
