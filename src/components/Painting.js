@@ -4,10 +4,10 @@ import { useParams } from "react-router-dom";
 function Painting({ painting, setPaintings }) {
 
     const { id } = useParams()
-    const [showStats, setShowStats] = useState(true)
-    const [favorite, setFavorite] = useState(false)
+    const [showStats, setShowStats] = useState(true)   
     const [paint, setPaint] = useState(null)
-    const liClass = !favorite ? "" : "in-gallery"
+    const [gallery, setGallery] =useState({})
+    // const liClass = !gallery ? "" : "in-gallery"
 
     useEffect(() => {
         if (!painting) {
@@ -26,14 +26,14 @@ function Painting({ painting, setPaintings }) {
     }
 
 
-    const addToFavorite = (e) => {
-        setFavorite(currentFav => !currentFav)
-        if (!favorite) {
+    const addToGallery = (e) => {
+        setGallery(currentGal => !currentGal)
+        if (!gallery) {
 
-            setFavorite(currentFav => [...currentFav, { id, painting_title, img_src }])
+            setGallery(currentGal => [...currentGal, { id, painting_title, img_src }])
         }
 
-        else { setFavorite(currentFav => currentFav.filter(item => item.id !== id)) }
+        else { setGallery(currentGal => currentGal.filter(item => item.id !== id)) }
 
     }
 
@@ -41,7 +41,6 @@ function Painting({ painting, setPaintings }) {
     const handleClick = () => {
         setShowStats(currentValue => !currentValue)
     }
-
 
     const handleDelete = () => {
         fetch(`http://localhost:3000/paintings/${painting.id}`,
@@ -51,16 +50,11 @@ function Painting({ painting, setPaintings }) {
         setPaintings(currentPaintings => currentPaintings.filter(element => element.id !== painting.id))
     }
 
-
-
-
     const {  num_colors, painting_title, img_src, season, episode, youtube_src, Black_Gesso, Bright_Red, Burnt_Umber, Cadmium_Yellow, Dark_Sienna, Indian_Red, Indian_Yellow, Liquid_Black, Liquid_Clear, Midnight_Black, Phthalo_Blue, Phthalo_Green, Prussian_Blue, Sap_Green, Titanium_White, Van_Dyke_Brown, Yellow_Ochre, Alizarin_Crimson } = finalPainting
-
 
     return (
         <li className="cards__item">
             <div className="card" >
-
                 <div className="card__title" >{painting_title}</div>
                 {showStats ? (<img className="card__image" src={img_src} alt={painting_title} onClick={handleClick} />) : (
                     <div onClick={handleClick}>
@@ -85,23 +79,19 @@ function Painting({ painting, setPaintings }) {
                             <li className="card__detail">{(Van_Dyke_Brown) === 1 ? "Van Dyke Brown" : ""} </li>
                             <li className="card__detail">{(Yellow_Ochre) === 1 ? "Yellow Ochre" : ""} </li>
                             <li className="card__detail">{(Alizarin_Crimson) === 1 ? "Alizarin Crimson" : ""} </li>
-
-
                         </ul>
-                    </div>
-                )}
-        
+                    </div>)}        
                 <div className="card__content">
-                    <p><a href={youtube_src} className="card__title">
+                    <p>
+                        <a href={youtube_src} className="card__title">
                         Season: {season} Episode:{episode}
-                    </a>
+                        </a>
                     </p>
                 </div>
                 <button className="deleteButton" onClick={handleDelete}>Buy Painting</button>
-                <button className="favoriteButton" onClick={addToFavorite}>Add To Gallery</button>
+                <button className="favoriteButton" onClick={addToGallery}>Add To Gallery</button>
             </div>
-</li>
-
+        </li>
     );
 }
 export default Painting;
