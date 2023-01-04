@@ -33,6 +33,7 @@ function App() {
 
 // }, []);
 
+// add to the main
 useEffect(() => { // fetch comments
   const fetchComments = async () => {
     try {
@@ -47,6 +48,7 @@ useEffect(() => { // fetch comments
    fetchComments()
   
 }, [])
+// add to the main
 
 useEffect(() => { // fetch paintings
   const fetchData = async () => {
@@ -75,22 +77,22 @@ useEffect(() => { // fetch paintings
             <Painting />
           </Route> 
 
+          {/* add to the main */}
           <Route path="/comments">
             <CommentsContainer comments={comments} />
             <CommentForm setComments={setComments} />
           </Route>
+          {/* add to the main */}
 
           <Route path="/">          
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
           </Route>
-        
+          
           <Route>
             <ErrorPage />
           </Route>
         </Switch>
-
-        
     </div>
   );
 }

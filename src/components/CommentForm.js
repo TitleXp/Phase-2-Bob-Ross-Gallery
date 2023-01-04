@@ -1,3 +1,5 @@
+//copy this whole page to the main
+
 import React from "react";
 import { useState } from "react";
 
@@ -40,9 +42,9 @@ function CommentForm({ setComments }){
         <div>
             <form onSubmit={handleSubmit}>
                 
-                <input type="text" name="name" placeholder="Name" onChange={handleChange} value={newComment.name} />
+                <input type="text" name="name" placeholder="Name" onChange={handleChange} value={newComment.name} required/>
 
-                <textarea type="text" name="message" placeholder="Comment here" rows={5} onChange={handleChange} value={newComment.message} />
+                <textarea type="text" name="message" placeholder="Comment here" rows={5} onChange={handleChange} value={newComment.message} required/>
                 
                 <input type="submit" value="Submit your comment" />
             </form>
