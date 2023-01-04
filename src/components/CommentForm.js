@@ -5,12 +5,14 @@ function CommentForm({ setComments }){
 
     const [newComment, setNewComment] = useState({
         name: "",
-        comment: ""
+        message: ""
     })
 
-    const handleChange = ({target: {name, value}}) => {
-        setNewComment({...newComment, [name]: value})
+    const handleChange = (e) => {
+        setNewComment({...newComment, [e.target.name]: e.target.value})
     }
+
+   
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -28,7 +30,7 @@ function CommentForm({ setComments }){
 
             setNewComment({
                 name: "",
-                comment: ""
+                message: ""
             })
 
     }
@@ -40,7 +42,7 @@ function CommentForm({ setComments }){
                 
                 <input type="text" name="name" placeholder="Name" onChange={handleChange} value={newComment.name} />
 
-                <textarea type="text" name="Write your comment here ..." placeholder="Comment" rows={5} onChange={handleChange} value={newComment.comment} />
+                <textarea type="text" name="message" placeholder="Comment here" rows={5} onChange={handleChange} value={newComment.message} />
                 
                 <input type="submit" value="Submit your comment" />
             </form>

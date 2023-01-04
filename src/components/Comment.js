@@ -1,10 +1,12 @@
 import React from "react";
 
-function Comment( name, comment) {
+
+
+function Comment({ comment }) {
     return(
         <div>
-            <h3>{name}</h3>
-            <p>{comment}</p>
+            <h3>{comment.name}: {comment.message}</h3>
+            
         </div>
     )
 };

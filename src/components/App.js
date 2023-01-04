@@ -8,7 +8,7 @@ import SearchBar from './Searchbar';
 import Painting from "./Painting";
 import ErrorPage from "./ErrorPage";
 import CommentsContainer from './CommentsContainer';
-import CommentForm from './CommentForm';
+import CommentForm from './CommentForm.js';
 
 
 import { Switch, Route } from "react-router-dom"
@@ -33,8 +33,8 @@ function App() {
 
 // }, []);
 
-useEffect(() => {
-  const fetchData = async () => {
+useEffect(() => { // fetch comments
+  const fetchComments = async () => {
     try {
       const resp = await fetch("http://localhost:3000/comments")
       const data = await resp.json()
@@ -44,11 +44,11 @@ useEffect(() => {
     }
    }
 
-   fetchData()
+   fetchComments()
   
 }, [])
 
-useEffect(() => {
+useEffect(() => { // fetch paintings
   const fetchData = async () => {
     try {
       const resp = await fetch("http://localhost:3000/paintings")
@@ -67,30 +67,30 @@ useEffect(() => {
 
   return (
     <div className="App">
+      
       <Header/>
 
-      <Switch>      
-     
-        <Route path="/paintings/:id">
-          <Painting />
-        </Route> 
+        <Switch>      
+          <Route path="/paintings/:id">
+            <Painting />
+          </Route> 
+
+          <Route path="/comments">
+            <CommentsContainer comments={comments} />
+            <CommentForm setComments={setComments} />
+          </Route>
+
+          <Route path="/">          
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+            <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
+          </Route>
+        
+          <Route>
+            <ErrorPage />
+          </Route>
+        </Switch>
 
         
-
-        <Route path="/">          
-          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-          <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
-        </Route>
-
-        <Route>
-          <CommentsContainer comments={comments} />
-          <CommentForm setComments={setComments} />
-        </Route>
-
-        <Route>
-          <ErrorPage />
-        </Route>
-      </Switch>
     </div>
   );
 }

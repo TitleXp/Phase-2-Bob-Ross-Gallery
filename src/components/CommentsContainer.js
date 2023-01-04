@@ -3,7 +3,7 @@ import Comment from "./Comment";
 
 function CommentsContainer({ comments }) {
 
-    const commentComponents = comments.map(comment => <Comment {...comment} key={comment.id}/>)
+    const commentComponents = comments.map(comment => <Comment comment={comment} key={comment.id}/>)
     return(
         <div>
             {commentComponents}
