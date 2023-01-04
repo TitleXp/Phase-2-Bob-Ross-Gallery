@@ -29,14 +29,14 @@ function Painting({ painting, setPaintings }) {
     const addToFavorite = (e) => {
         setFavorite(currentFav => !currentFav)
         if (!favorite) {
-            setFavorite(currentFav => [...currentFav, { id, painting_title, img_src }])
-        }
 
-        else { setFavorite(currentFav => currentFav.filter(item => item.id !== id)) }
-
-    }
-
-
+            setFavorite(currentFav => [...currentFav,{ id, painting_title, img_src}])
+        } 
+        
+        else{setFavorite(currentFav => currentFav.filter(item => item.id !== id))}
+       
+       }
+       
 
     const handleClick = () => {
         setShowStats(currentValue => !currentValue)
@@ -100,7 +100,12 @@ function Painting({ painting, setPaintings }) {
                 <button className="deleteButton" onClick={handleDelete}>Buy Painting</button>
                 <button className="favoriteButton" onClick={addToFavorite}>Add To Gallery</button>
             </div>
-        </li>
+
+           <span> <button className="deleteButton" onClick={handleDelete}>Buy Painting</button>
+            <button className="favoriteButton" onClick={addToFavorite}>Add To Gallery</button></span>
+    </div>
+</li>
+
     );
 }
 export default Painting;
