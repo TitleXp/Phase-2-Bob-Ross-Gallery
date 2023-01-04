@@ -49,20 +49,21 @@ useEffect(() => {
   return (
     <div className="App">
       <Header/>
-      <Switch>
+
+      <Switch>      
+     
         <Route path="/paintings/:id">
           <Painting />
-        </Route>
+        </Route> 
 
-        <Route path="/">
-          
+        <Route path="/">          
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
         </Route>
 
         <Route>
-            <ErrorPage />
-          </Route>
+          <ErrorPage />
+        </Route>
       </Switch>
     </div>
   );
