@@ -1,0 +1,51 @@
+import React from "react";
+import { useState } from "react";
+
+function CommentForm({ setComments }){
+
+    const [newComment, setNewComment] = useState({
+        name: "",
+        comment: ""
+    })
+
+    const handleChange = ({target: {name, value}}) => {
+        setNewComment({...newComment, [name]: value})
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        
+            fetch("http://localhost:3000/comments", {
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newComment)
+            })
+            .then(response => response.json())
+            .then(newComment => setComments(currentVal => [newComment, ...currentVal]))
+            .catch(error => alert(error))
+
+            setNewComment({
+                name: "",
+                comment: ""
+            })
+
+    }
+
+
+    return(
+        <div>
+            <form onSubmit={handleSubmit}>
+                
+                <input type="text" name="name" placeholder="Name" onChange={handleChange} value={newComment.name} />
+
+                <textarea type="text" name="Write your comment here ..." placeholder="Comment" rows={5} onChange={handleChange} value={newComment.comment} />
+                
+                <input type="submit" value="Submit your comment" />
+            </form>
+        </div>
+    )
+};
+
+export default CommentForm;

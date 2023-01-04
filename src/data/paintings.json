@@ -12091,19 +12091,22 @@
       "Alizarin_Crimson": 1
     }
   ],
-  "reviews": [
+  "comments": [
     {
       "id": 1,
+      "name": "John Doe",
       "comment": "Wow! Great tutorial!",
       "likes": 2
     },
     {
       "id": 2,
+      "name": "Dylan Curtis",
       "comment": "10/10 would watch again!",
       "likes": 4
     },
     {
       "id": 3,
+      "name": "Trolololol3000",
       "comment": "What is dis",
       "likes": 1
     }

@@ -7,6 +7,8 @@ import PaintingsContainer from "./PaintingsContainer";
 import SearchBar from './Searchbar';
 import Painting from "./Painting";
 import ErrorPage from "./ErrorPage";
+import CommentsContainer from './CommentsContainer';
+import CommentForm from './CommentForm';
 
 
 import { Switch, Route } from "react-router-dom"
@@ -16,6 +18,8 @@ function App() {
 
   const [paintings, setPaintings]=useState([])
   const [searchTerm, setSearchTerm] = useState("")
+  const [comments, setComments] = useState([])
+  // const []
 
 // useEffect(() => {
 //   const fetchData = () => {
@@ -28,6 +32,21 @@ function App() {
 //   fetchData()
 
 // }, []);
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const resp = await fetch("http://localhost:3000/comments")
+      const data = await resp.json()
+      setComments(data)
+    } catch (error) {
+      alert(error)
+    }
+   }
+
+   fetchData()
+  
+}, [])
 
 useEffect(() => {
   const fetchData = async () => {
@@ -56,9 +75,16 @@ useEffect(() => {
           <Painting />
         </Route> 
 
+        
+
         <Route path="/">          
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
+        </Route>
+
+        <Route>
+          <CommentsContainer comments={comments} />
+          <CommentForm setComments={setComments} />
         </Route>
 
         <Route>
