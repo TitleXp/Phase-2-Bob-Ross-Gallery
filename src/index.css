@@ -86,8 +86,18 @@ img {
 
 .card__detail {
   display: grid;
+  grid-template-columns: repeat(1fr);
+}
+
+.display__none{
+  display: none;
+}
+
+.colors__detail {
+  display: list-item;
   grid-template-columns: repeat(3, 1fr);
 }
+
 
 .Bob-Ross {
   width: 100px;
