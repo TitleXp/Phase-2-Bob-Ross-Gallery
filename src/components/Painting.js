@@ -30,13 +30,13 @@ function Painting({ painting, setPaintings }) {
         setFavorite(currentFav => !currentFav)
         if (!favorite) {
 
-            setFavorite(currentFav => [...currentFav,{ id, painting_title, img_src}])
-        } 
-        
-        else{setFavorite(currentFav => currentFav.filter(item => item.id !== id))}
-       
-       }
-       
+            setFavorite(currentFav => [...currentFav, { id, painting_title, img_src }])
+        }
+
+        else { setFavorite(currentFav => currentFav.filter(item => item.id !== id)) }
+
+    }
+
 
     const handleClick = () => {
         setShowStats(currentValue => !currentValue)
@@ -51,8 +51,8 @@ function Painting({ painting, setPaintings }) {
         setPaintings(currentPaintings => currentPaintings.filter(element => element.id !== painting.id))
     }
 
-   
-    
+
+
 
     const { colors, num_colors, painting_title, img_src } = finalPainting
 
@@ -90,7 +90,7 @@ function Painting({ painting, setPaintings }) {
                         </ul>
                     </div>
                 )}
-
+        
                 <div className="card__content">
                     <p><a href={painting.youtube_src} className="card__title">
                         Season: {painting.season} Episode:{painting.episode}
@@ -100,10 +100,6 @@ function Painting({ painting, setPaintings }) {
                 <button className="deleteButton" onClick={handleDelete}>Buy Painting</button>
                 <button className="favoriteButton" onClick={addToFavorite}>Add To Gallery</button>
             </div>
-
-           <span> <button className="deleteButton" onClick={handleDelete}>Buy Painting</button>
-            <button className="favoriteButton" onClick={addToFavorite}>Add To Gallery</button></span>
-    </div>
 </li>
 
     );
