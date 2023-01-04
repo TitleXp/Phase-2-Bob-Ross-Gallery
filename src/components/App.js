@@ -50,16 +50,16 @@ useEffect(() => {
     <div className="App">
       <Header/>
 
-      <Route path="/">          
+      <Switch>      
+     
+        <Route path="/paintings/:id">
+          <Painting />
+        </Route> 
+
+        <Route path="/">          
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
         </Route>
-
-      <Switch>
-        <Route path="/paintings/:id">
-        <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
-        <Painting />
-        </Route>         
 
         <Route>
           <ErrorPage />

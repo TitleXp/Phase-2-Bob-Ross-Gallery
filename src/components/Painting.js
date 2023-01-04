@@ -18,7 +18,7 @@ function Painting ({ painting, setPaintings }) {
         }
       }, [painting, id]);
 
-      const finalPainting = !paint ? painting: paint
+      const finalPainting = !paint ? painting : paint
       console.log(finalPainting)
       console.log(id)
       
@@ -54,7 +54,7 @@ function Painting ({ painting, setPaintings }) {
 
     
 
-    const { colors, num_colors, painting_title, img_src } = finalPainting
+    const { colors, num_colors, painting_title, img_src, youtube_src, season, episode } = finalPainting
     return (
 <li className="cards__item">
     <div className="card" >
@@ -68,8 +68,8 @@ function Painting ({ painting, setPaintings }) {
             )}
 
             <div className="card__content">
-                <p><a href={painting.youtube_src} className="card__title">
-                    Season: {painting.season} Episode:{painting.episode}
+                <p><a href={youtube_src} className="card__title">
+                    Season: {season} Episode:{episode}
                 </a>
                 </p>
             </div>
