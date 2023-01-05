@@ -1,16 +1,13 @@
-//copy this whole page to the main
-
 import React from "react";
-
-
 
 function Comment({ comment }) {
     return(
         <div>
-            <h3>{comment.name}: {comment.message}</h3>
-            
+            <div className="CommentContainer">
+                <h3>{comment.name}: </h3>
+                <p>{comment.message}</p>
+            </div>
         </div>
     )
 };
-
 export default Comment;

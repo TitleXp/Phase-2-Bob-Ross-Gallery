@@ -13,5 +13,4 @@ function PaintingsContainer({paintings, setPaintings, setMyPaintings}) {
     </ul>
   );
 }
-
 export default PaintingsContainer;

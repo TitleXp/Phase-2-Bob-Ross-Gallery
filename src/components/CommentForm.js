@@ -1,5 +1,3 @@
-//copy this whole page to the main
-
 import React from "react";
 import { useState } from "react";
 
@@ -14,11 +12,8 @@ function CommentForm({ setComments }){
         setNewComment({...newComment, [e.target.name]: e.target.value})
     }
 
-   
-
     const handleSubmit = (e) => {
         e.preventDefault()
-        
             fetch("http://localhost:3000/comments", {
                 method: "POST",
                 headers:{
@@ -29,27 +24,28 @@ function CommentForm({ setComments }){
             .then(response => response.json())
             .then(newComment => setComments(currentVal => [newComment, ...currentVal]))
             .catch(error => alert(error))
-
             setNewComment({
                 name: "",
                 message: ""
             })
-
     }
 
-
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
-                
-                <input type="text" name="name" placeholder="Name" onChange={handleChange} value={newComment.name} required/>
+        <div className="commentForm">
+            <form  onSubmit={handleSubmit}>
 
-                <textarea type="text" name="message" placeholder="Comment here" rows={5} onChange={handleChange} value={newComment.message} required/>
+                <div>
+                    <input className="commentName" type="text" name="name" placeholder="Name" onChange={handleChange} value={newComment.name} required/>
+                </div>
                 
-                <input type="submit" value="Submit your comment" />
+                <div>
+                    <textarea className="commentBox" type="text" name="message" placeholder="Comment here" rows={5} onChange={handleChange} value={newComment.message} required/>
+                </div>
+
+                <input type="submit" value="Response" />
+
             </form>
         </div>
     )
 };
-
 export default CommentForm;

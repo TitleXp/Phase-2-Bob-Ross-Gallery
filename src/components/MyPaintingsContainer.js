@@ -1,9 +1,8 @@
 import MyPainting from "./MyPainting";
 
 function MyPaintingsContainer({ setPaintings, myPaintings, setMyPaintings}) {
-    console.log(myPaintings)
+    // console.log(myPaintings)
    const  mapMyPaintings= myPaintings.map(painting => (
-
  <MyPainting key={painting.id}
  setPaintings={setPaintings}
  mypainting={painting}
@@ -15,5 +14,4 @@ function MyPaintingsContainer({ setPaintings, myPaintings, setMyPaintings}) {
     </ul>
   );
 }
-
 export default MyPaintingsContainer;
