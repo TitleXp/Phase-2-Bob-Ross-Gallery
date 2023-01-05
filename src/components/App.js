@@ -78,13 +78,13 @@ useEffect(() => { // fetch paintings
           </Route> 
 
           {/* add to the main */}
-          <Route path="/comments">
+          <Route exact path="/comments">
             <CommentsContainer comments={comments} />
             <CommentForm setComments={setComments} />
           </Route>
           {/* add to the main */}
 
-          <Route path="/">         
+          <Route exact path="/">         
            
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
