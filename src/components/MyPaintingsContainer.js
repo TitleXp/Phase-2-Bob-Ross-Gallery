@@ -1,10 +1,13 @@
-import MyPainting from "./Painting";
+import MyPainting from "./MyPainting";
 
-function MyPaintingsContainer({myPaintings, setMyPaintings}) {
+function MyPaintingsContainer({ setPaintings, myPaintings, setMyPaintings}) {
+    console.log(myPaintings)
    const  mapMyPaintings= myPaintings.map(painting => (
+
  <MyPainting key={painting.id}
- painting={painting}
- setPaintings={setMyPaintings}
+ setPaintings={setPaintings}
+ mypainting={painting}
+ setMyPaintings={setMyPaintings}
  />))
   return (
     <ul className="cards">

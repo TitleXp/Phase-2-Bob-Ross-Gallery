@@ -1,135 +1,138 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-function MyPainting({ mypainting, setPaintings }) {
+function MyPainting({setPaintings, mypainting, setMyPaintings }) {
 
     const { id } = useParams()
     const [showStats, setShowStats] = useState(true)   
     const [paint, setPaint] = useState(null)
     const [gallery, setGallery] =useState({})
     // const liClass = !gallery ? "" : "in-gallery"
-
-    const [oldPaintings, setOldPaintings] =useState({
+// console.log(mypainting)
+    // const [oldPaintings, setOldPaintings] =useState({
         
-        "painting_index": mypainting.painting_index,
-        "img_src": mypainting.img_src,
-        "painting_title": mypainting.painting_title,
-        "season": mypainting.season,
-        "episode": mypainting.episode,
-        "num_colors": mypainting.num_colors,
-        "youtube_src": mypainting.youtube_src,
-        "colors": mypainting.colors,
-        "color_hex": mypainting.color_hex,
-        "Black_Gesso": mypainting.Black_Gesso,
-        "Bright_Red": mypainting.Bright_Red,
-        "Burnt_Umber": mypainting.Burnt_Umber,
-        "Cadmium_Yellow": mypainting.Cadmium_Yellow,
-        "Dark_Sienna": mypainting.Dark_Sienna,
-        "Indian_Red": mypainting.Indian_Red,
-        "Indian_Yellow": mypainting.Indian_Yellow,
-        "Liquid_Black": mypainting.Liquid_Black,
-        "Liquid_Clear": mypainting.Liquid_Clear,
-        "Midnight_Black": mypainting.Midnight_Black,
-        "Phthalo_Blue": mypainting.Phthalo_Blue,
-        "Phthalo_Green": mypainting.Phthalo_Green,
-        "Prussian_Blue": mypainting.Prussian_Blue,
-        "Sap_Green": mypainting.Sap_Green,
-        "Titanium_White": mypainting.Titanium_White,
-        "Van_Dyke_Brown": mypainting.Van_Dyke_Brown,
-        "Yellow_Ochre": mypainting.Yellow_Ochre,
-        "Alizarin_Crimson": mypainting.Alizarin_Crimson
-      })
+    //     "painting_index": mypainting.painting_index,
+    //     "img_src": mypainting.img_src,
+    //     "painting_title": mypainting.painting_title,
+    //     "season": mypainting.season,
+    //     "episode": mypainting.episode,
+    //     "num_colors": mypainting.num_colors,
+    //     "youtube_src": mypainting.youtube_src,
+    //     "colors": mypainting.colors,
+    //     "color_hex": mypainting.color_hex,
+    //     "Black_Gesso": mypainting.Black_Gesso,
+    //     "Bright_Red": mypainting.Bright_Red,
+    //     "Burnt_Umber": mypainting.Burnt_Umber,
+    //     "Cadmium_Yellow": mypainting.Cadmium_Yellow,
+    //     "Dark_Sienna": mypainting.Dark_Sienna,
+    //     "Indian_Red": mypainting.Indian_Red,
+    //     "Indian_Yellow": mypainting.Indian_Yellow,
+    //     "Liquid_Black": mypainting.Liquid_Black,
+    //     "Liquid_Clear": mypainting.Liquid_Clear,
+    //     "Midnight_Black": mypainting.Midnight_Black,
+    //     "Phthalo_Blue": mypainting.Phthalo_Blue,
+    //     "Phthalo_Green": mypainting.Phthalo_Green,
+    //     "Prussian_Blue": mypainting.Prussian_Blue,
+    //     "Sap_Green": mypainting.Sap_Green,
+    //     "Titanium_White": mypainting.Titanium_White,
+    //     "Van_Dyke_Brown": mypainting.Van_Dyke_Brown,
+    //     "Yellow_Ochre": mypainting.Yellow_Ochre,
+    //     "Alizarin_Crimson": mypainting.Alizarin_Crimson
+    //   })
 
-    useEffect(() => {
-        if (!painting) {
-            fetch(`http://localhost:3000/gallery/${id}`)
-                .then(resp => resp.json())
-                .then(paintingObj => setPaint(paintingObj))
-                .catch(err => alert(err))
-        }
-    }, [painting, id]);
+    // useEffect(() => {
+    //     if (!mypainting) {
+    //         fetch(`http://localhost:3000/gallery/${id}`)
+    //             .then(resp => resp.json())
+    //             .then(paintingObj => setPaint(paintingObj))
+    //             .catch(err => alert(err))
+    //     }
+    // }, [mypainting, id]);
 
-    const finalPainting = !paint ? painting : paint
-    //   console.log(finalPainting)
+    // const finalPainting = !paint ? mypainting : paint
+    // //   console.log(finalPainting)
 
-    if (!finalPainting) {
-        return <h3>Loading...</h3>
-    }
+    // if (!finalPainting) {
+    //     return <h3>Loading...</h3>
+    // }
 
 
-    const addToGallery = (e) => {
-        setGallery(currentGal => !currentGal)
-        if (!gallery) {
+    // const addToGallery = (e) => {
+    //     setGallery(currentGal => !currentGal)
+    //     if (!gallery) {
 
-            setGallery(currentGal => [...currentGal, { id, painting_title, img_src }])
-        }
+    //         setGallery(currentGal => [...currentGal, { id, painting_title, img_src }])
+    //     }
 
-        else { setGallery(currentGal => currentGal.filter(item => item.id !== id)) }
+    //     else { setGallery(currentGal => currentGal.filter(item => item.id !== id)) }
 
-    }
+    // }
 
 
     const handleClick = () => {
         setShowStats(currentValue => !currentValue)
     }
 
-    const handleDelete = () => {
-        fetch(`http://localhost:3000/gallery/${painting.id}`,{
+    const handleDelete = () => { 
+        // console.log("handling delete")
+        fetch(`http://localhost:3000/paintings`,{
             method: "POST",
             headers:{
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(oldPaintings)
+            body: JSON.stringify(mypainting)
         })
         .then(response => response.json())
-        .then(oldPaintings => setOldPaintings(currentVal => [oldPaintings, ...currentVal]))
+        .then(paintingObj => setPaintings(currentVal => [paintingObj, ...currentVal]))
         .catch(error => alert(error))
 
-        setOldPaintings({
-            "painting_index": "",
-            "img_src": "",
-            "painting_title": "",
-            "season": "",
-            "episode": "",
-            "num_colors": "",
-            "youtube_src": "",
-            "colors": "",
-            "color_hex": "",
-            "Black_Gesso": "",
-            "Bright_Red": "",
-            "Burnt_Umber": "",
-            "Cadmium_Yellow": "",
-            "Dark_Sienna": "",
-            "Indian_Red": "",
-            "Indian_Yellow": "",
-            "Liquid_Black": "",
-            "Liquid_Clear": "",
-            "Midnight_Black": "",
-            "Phthalo_Blue": "",
-            "Phthalo_Green": "",
-            "Prussian_Blue": "",
-            "Sap_Green": "",
-            "Titanium_White": "",
-            "Van_Dyke_Brown": "",
-            "Yellow_Ochre": "",
-            "Alizarin_Crimson": ""
+        // setOldPaintings({
+        //     "painting_index": "",
+        //     "img_src": "",
+        //     "painting_title": "",
+        //     "season": "",
+        //     "episode": "",
+        //     "num_colors": "",
+        //     "youtube_src": "",
+        //     "colors": "",
+        //     "color_hex": "",
+        //     "Black_Gesso": "",
+        //     "Bright_Red": "",
+        //     "Burnt_Umber": "",
+        //     "Cadmium_Yellow": "",
+        //     "Dark_Sienna": "",
+        //     "Indian_Red": "",
+        //     "Indian_Yellow": "",
+        //     "Liquid_Black": "",
+        //     "Liquid_Clear": "",
+        //     "Midnight_Black": "",
+        //     "Phthalo_Blue": "",
+        //     "Phthalo_Green": "",
+        //     "Prussian_Blue": "",
+        //     "Sap_Green": "",
+        //     "Titanium_White": "",
+        //     "Van_Dyke_Brown": "",
+        //     "Yellow_Ochre": "",
+        //     "Alizarin_Crimson": ""
             
-        })
+        // })
 
        
 
-        fetch( "http://localhost:3000/gallery",
+        fetch(`http://localhost:3000/gallery/${mypainting.id}`,
             {
                 method: "DELETE"
             })
-        setPaintings(currentPaintings => currentPaintings.filter(element => element.id !== painting.id))
+        setMyPaintings(currentPaintings => currentPaintings.filter(element => element.id !== mypainting.id))
     }
 
-    const handleChange = (e) => {
-        setOldPaintings({...oldPaintings, [e.target.name]: e.target.value})
+    // const handleChange = (e) => {
+    //     setOldPaintings({...oldPaintings, [e.target.name]: e.target.value})
+    // }
+    if(!mypainting) {
+       return <h2>Loading... </h2>
     }
-
-    const {  num_colors, painting_title, img_src, season, episode, youtube_src, Black_Gesso, Bright_Red, Burnt_Umber, Cadmium_Yellow, Dark_Sienna, Indian_Red, Indian_Yellow, Liquid_Black, Liquid_Clear, Midnight_Black, Phthalo_Blue, Phthalo_Green, Prussian_Blue, Sap_Green, Titanium_White, Van_Dyke_Brown, Yellow_Ochre, Alizarin_Crimson } = finalPainting
+    const {  num_colors, painting_title, img_src, season, episode, youtube_src, Black_Gesso, Bright_Red, Burnt_Umber, Cadmium_Yellow, Dark_Sienna, Indian_Red, Indian_Yellow, Liquid_Black, Liquid_Clear, Midnight_Black, Phthalo_Blue, Phthalo_Green, Prussian_Blue, Sap_Green, Titanium_White, Van_Dyke_Brown, Yellow_Ochre, Alizarin_Crimson } = mypainting
 
     return (
         <li className="cards__item">
@@ -167,8 +170,8 @@ function MyPainting({ mypainting, setPaintings }) {
                         </a>
                     </p>
                 </div>
-                <button className="deleteButton" onClick={handleDelete} onChange={handleChange}>Buy Painting</button>
-                <button className="favoriteButton" onClick={addToGallery}>Add To Gallery</button>
+                <button className="deleteButton" onClick={handleDelete} >Sell Painting</button>
+                {/* <button className="favoriteButton" onClick={addToGallery}>Add To Gallery</button> */}
             </div>
         </li>
     );
