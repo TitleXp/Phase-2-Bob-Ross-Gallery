@@ -11,7 +11,9 @@ import CommentsContainer from './CommentsContainer';
 import CommentForm from './CommentForm.js';
 
 
+
 import { Switch, Route } from "react-router-dom"
+import MyPaintingsContainer from './MyPaintingsContainer';
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
   const [paintings, setPaintings]=useState([])
   const [searchTerm, setSearchTerm] = useState("")
   const [comments, setComments] = useState([])
+
+  const [myPaintings, setMyPaintings]=useState([])
   // const []
 
 // useEffect(() => {
@@ -48,6 +52,22 @@ useEffect(() => { // fetch comments
    fetchComments()
   
 }, [])
+
+useEffect(() => { // fetch my gallery
+  const fetchGallery = async () => {
+    try {
+      const resp = await fetch("http://localhost:3000/gallery")
+      const data = await resp.json()
+      setMyPaintings(data)
+    } catch (error) {
+      alert(error)
+    }
+   }
+
+   fetchGallery()
+  
+}, [])
+
 // add to the main
 
 useEffect(() => { // fetch paintings
@@ -88,6 +108,10 @@ useEffect(() => { // fetch paintings
            
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
+          </Route>
+
+          <Route exact path="/mygallery">
+            <MyPaintingsContainer myPaintings={myPaintings} setMyPaintings={setMyPaintings}/>
           </Route>
           
           <Route>

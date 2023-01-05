@@ -12,6 +12,10 @@ function Header() {
         <li><NavLink to="/comments">
           Comments
         </NavLink></li>
+
+        <li><NavLink to="/mygallery">
+          My Gallery
+        </NavLink></li>
       </nav>
       <img src="https://www.bobross.com/content/bob_ross_img.png" className="Bob-Ross" alt="Bob Ross"></img>
     </header>
