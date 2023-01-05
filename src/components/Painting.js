@@ -79,7 +79,7 @@ function Painting({ painting, setPaintings, setMyPaintings }) {
                     </div>)}        
                 <div className="card__content">
                     <p>
-                        <a href={youtube_src} className="card__title">
+                        <a href={youtube_src} className="card__episode">
                         Season: {season} Episode:{episode}
                         </a>
                     </p>

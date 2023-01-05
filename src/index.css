@@ -75,6 +75,7 @@ header {
   flex: 1 1 auto;
   flex-direction: column;
   padding: 1rem;
+  
 }
 
 /* .card__image {
@@ -95,11 +96,14 @@ header {
 
 .card__title {
   color: #696969;
-  font-size: 1.25rem;
   font-weight: 3000;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-size: xx-large;
+  font-size: x-large;
+}
+
+.card__episode {
+  font-size: medium;
 }
 
 .card__text, .card__detail p {
@@ -190,8 +194,10 @@ header {
 
 /* Bob Ross Gallery */
 .pageTitle {
+
   margin: auto;
   font-size: 3.5em;
   margin: 20px;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
 }
