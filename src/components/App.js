@@ -84,7 +84,8 @@ useEffect(() => { // fetch paintings
           </Route>
           {/* add to the main */}
 
-          <Route path="/">          
+          <Route path="/">         
+           
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
           </Route>
