@@ -1,7 +1,7 @@
 import Painting from "./Painting";
 
 
-function Gallery(handleRemovePainting, gallery) {
+function Gallery({handleRemovePainting, gallery}) {
     const mappedGallery = gallery.map(painting=> <Painting key= {painting.id} painting={painting} handleClick={handleRemovePainting}/>);
 
 
