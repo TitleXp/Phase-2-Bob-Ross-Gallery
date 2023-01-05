@@ -1,12 +1,11 @@
 import Painting from "./Painting";
 
-function PaintingsContainer({paintings, setPaintings, handleAddPainting}) {
- 
+function PaintingsContainer({paintings, setPaintings, setMyPaintings}) {
    const  mapPaintings= paintings.map(painting => (
  <Painting key={painting.id}
  painting={painting}
  setPaintings={setPaintings}
- handleAddPainting={handleAddPainting}
+ setMyPaintings={setMyPaintings}
  />))
   return (
     <ul className="cards">
