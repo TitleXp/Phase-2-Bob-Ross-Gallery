@@ -14,6 +14,7 @@ import CommentForm from './CommentForm.js';
 
 import { Switch, Route } from "react-router-dom"
 import MyPaintingsContainer from './MyPaintingsContainer';
+import PaintingsContainer from './PaintingsContainer';
 
 
 function App() {
@@ -110,7 +111,7 @@ useEffect(() => { // fetch paintings
           <Route exact path="/">         
            
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            {/* <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings} setMyPaintings={setMyPaintings}/> */}
+            <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings} setMyPaintings={setMyPaintings}/>
           </Route>
 
          
