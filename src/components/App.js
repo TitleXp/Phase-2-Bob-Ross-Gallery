@@ -3,7 +3,7 @@
 import '../App.css';
 import { useState, useEffect } from 'react';
 import Header from "./Header";
-import PaintingsContainer from "./PaintingsContainer";
+import MainContainer from "./MainContainer";
 import SearchBar from './Searchbar';
 import Painting from "./Painting";
 import ErrorPage from "./ErrorPage";
@@ -58,7 +58,7 @@ useEffect(() => {
 
         <Route path="/">          
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-          <PaintingsContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
+          <MainContainer paintings={filteredPaintings} setPaintings={setPaintings}/>
         </Route>
 
         <Route>

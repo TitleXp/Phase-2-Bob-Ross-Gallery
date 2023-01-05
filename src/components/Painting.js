@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-function Painting({ painting, setPaintings }) {
+function Painting({ painting, setPaintings, handleAddPainting }) {
 
     const { id } = useParams()
     const [showStats, setShowStats] = useState(true)   
     const [paint, setPaint] = useState(null)
-    const [gallery, setGallery] =useState({})
+    
     // const liClass = !gallery ? "" : "in-gallery"
 
     useEffect(() => {
@@ -23,19 +23,7 @@ function Painting({ painting, setPaintings }) {
 
     if (!finalPainting) {
         return <h3>Loading...</h3>
-    }
-
-
-    const addToGallery = (e) => {
-        setGallery(currentGal => !currentGal)
-        if (!gallery) {
-
-            setGallery(currentGal => [...currentGal, { id, painting_title, img_src }])
-        }
-
-        else { setGallery(currentGal => currentGal.filter(item => item.id !== id)) }
-
-    }
+    }   
 
 
     const handleClick = () => {
@@ -89,7 +77,7 @@ function Painting({ painting, setPaintings }) {
                     </p>
                 </div>
                 <button className="deleteButton" onClick={handleDelete}>Buy Painting</button>
-                <button className="favoriteButton" onClick={addToGallery}>Add To Gallery</button>
+                <button className="favoriteButton" onClick={handleAddPainting}>Add To Gallery</button>
             </div>
         </li>
     );
