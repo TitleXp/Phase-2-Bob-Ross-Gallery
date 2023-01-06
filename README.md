@@ -48,7 +48,7 @@ type
 
 > cd bob-ross-gallery
 
-Now we are inside the legendary-phase1-project folder!
+Now we are inside the bob-ross-gallery folder!
 
 type
 
