@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Bob Ross Gallery
+# Read me
+## Welcome to Bob Ross Gallery! 
+## We are showcasing Bob Ross paintings that you can enjoy!
+## You can also save your favorite painting(s) into your own gallery as well!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Git clone
+  To start you'll need to have your WSL2 or mac vers set up
 
-## Available Scripts
+> Go To https://github.com/TitleXp/Phase-2-Bob-Ross-Gallery 
 
-In the project directory, you can run:
+1. Click on "Fork"
 
-### `npm start`
+![ForkBtn](https://www.earthdatascience.org/images/earth-analytics/git-version-control/githubguides-bootcamp-fork.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Click on "Create Fork"
+![](https://github.com/jccaropino7786/legendary-phase1-project/blob/main/images%20and%20gifs/create%20fork.PNG?raw=true)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+*If it doesn't redirect to your own forked repository*
+    -click on your own profile (top right)
+    -click "Your repository"
+    -click on "legendary-phase1-project"
 
-### `npm test`
+3. Click "<> Code" and then a drop down will show
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![](https://github.com/jccaropino7786/legendary-phase1-project/blob/main/images%20and%20gifs/copy%20SSH.PNG?raw=true)
 
-### `npm run build`
+4. Click "SSH" and then copy that to the clipboard
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Open up your terminal and find a place to place the it
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+6. Type
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> git clone
 
-### `npm run eject`
+then right click or ctrl + v/command + v,
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+then hit enter/return
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+type
+> ls
+Look for the file "bob-ross-gallery"
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- add raw=true at the end -->
+![](https://github.com/TitleXp/Phase-2-Bob-Ross-Gallery/blob/main/images%20and%20gifs/ls.PNG?raw=true)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+type
 
-## Learn More
+> cd bob-ross-gallery
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Now we are inside the legendary-phase1-project folder!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+type
 
-### Code Splitting
+> code .
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Then your visual studio should open.
 
-### Analyzing the Bundle Size
+Inside your terminal in the visual studio we need to start your local JSON server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+type
 
-### Making a Progressive Web App
+> npm run server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+then, type
 
-### Advanced Configuration
+> npm i && npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This will take a second to install your dependencies. A browser should starts automatically with the home page loaded. It should look something like this!
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![](https://github.com/TitleXp/Phase-2-Bob-Ross-Gallery/blob/f40f33c4ea0a9c72e3ba0ab496096757f2d2117d/images%20and%20gifs/home%20page.PNG?raw=true)
