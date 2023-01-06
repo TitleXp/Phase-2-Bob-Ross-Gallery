@@ -64,9 +64,14 @@ type
 
 then, type
 
-> npm i && npm start
+> npm i 
 
-This will take a second to install your dependencies. A browser should starts automatically with the home page loaded. It should look something like this!
+This will take a second to install your dependencies.
+
+then, type
+> npm --prefix /gallery run start
+
+A browser should starts automatically with the home page loaded. It should look something like this!
 
 ![](https://github.com/TitleXp/Phase-2-Bob-Ross-Gallery/blob/f40f33c4ea0a9c72e3ba0ab496096757f2d2117d/images%20and%20gifs/home%20page.PNG?raw=true)
 
