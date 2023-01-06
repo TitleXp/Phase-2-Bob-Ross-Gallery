@@ -69,3 +69,22 @@ then, type
 This will take a second to install your dependencies. A browser should starts automatically with the home page loaded. It should look something like this!
 
 ![](https://github.com/TitleXp/Phase-2-Bob-Ross-Gallery/blob/f40f33c4ea0a9c72e3ba0ab496096757f2d2117d/images%20and%20gifs/home%20page.PNG?raw=true)
+
+You can search your favorite Bob Ross paintings in the searchbar
+
+When you click add to gallery you can include  your favorite paintings in your gallery!
+
+
+![](https://github.com/TitleXp/Phase-2-Bob-Ross-Gallery/blob/main/images%20and%20gifs/my%20gallery%20page.PNG?raw=true)
+
+
+
+ Or if you change your mind you can always remove them from your gallery!
+
+![](https://github.com/TitleXp/Phase-2-Bob-Ross-Gallery/blob/main/images%20and%20gifs/comment%20page.PNG?raw=true)
+
+Please do leave a comment to give us your feedback.
+
+
+Thanks for visiting our page to appreciate Bob Ross art works!
+
