@@ -19,7 +19,7 @@
 *If it doesn't redirect to your own forked repository*
     -click on your own profile (top right)
     -click "Your repository"
-    -click on "legendary-phase1-project"
+    -click on "bob-ross-gallery"
 
 3. Click "<> Code" and then a drop down will show
 
