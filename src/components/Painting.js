@@ -17,7 +17,7 @@ function Painting({ painting, setPaintings, setMyPaintings }) {
     }, [painting, id]);
 
     const finalPainting = !paint ? painting : paint
-    //   console.log(finalPainting)
+    
     if (!finalPainting) {
         return <h3>Loading...</h3>
     }
@@ -28,7 +28,7 @@ function Painting({ painting, setPaintings, setMyPaintings }) {
 
     const handleDelete = () => {
         const paintingToAdd = {...finalPainting, id:null }
-        // console.log(paintingToAdd)
+        
         fetch("http://localhost:3000/gallery",{
             method: "POST",
             headers:{

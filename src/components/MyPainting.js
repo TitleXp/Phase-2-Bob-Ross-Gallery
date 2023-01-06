@@ -9,13 +9,13 @@ function MyPainting({setPaintings, mypainting, setMyPaintings }) {
     }
 
     const handleDelete = () => { 
-        // console.log("handling delete")
+        const paintingToAdd = {...mypainting, id:null }
         fetch(`http://localhost:3000/paintings`,{
             method: "POST",
             headers:{
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(mypainting)
+            body: JSON.stringify(paintingToAdd)
         })
         .then(response => response.json())
         .then(paintingObj => setPaintings(currentVal => [paintingObj, ...currentVal]))
