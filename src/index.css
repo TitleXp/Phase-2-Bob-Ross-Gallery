@@ -78,18 +78,6 @@ header {
   
 }
 
-/* .card__image {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-  filter: contrast(100%);
-  overflow: hidden;
-  position: relative;
-  transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);
-} */
-
 .card__image:hover{
   border: 1px solid #777;
 }
@@ -127,10 +115,6 @@ header {
   font-size: larger;
 }
 
-/* .display__none{
-  display: none;
-} */
-
 .colors__detail {
   display: list-item;
   grid-template-columns: repeat(3, 1fr);
@@ -158,7 +142,6 @@ header {
   padding: 10px;
   background-color: whitesmoke;
   font: 1.4em/1.6em cursive;
-  color: #095484;
   font-family: Arial, Helvetica, sans-serif;;
 }
 
@@ -173,10 +156,8 @@ header {
 
 .Container {
   position: relative;
-  /* border: solid; */
   width: 40%;
-  margin: auto;
-  /* background-color: blue; */
+  margin: auto; 
 }
 
 .CommentContainer {

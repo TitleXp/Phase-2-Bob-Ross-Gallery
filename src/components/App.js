@@ -3,13 +3,14 @@ import { Switch, Route } from "react-router-dom"
 import { useState, useEffect } from 'react';
 
 import Header from "./Header";
-import PaintingsContainer from "./PaintingsContainer";
+
 import SearchBar from './Searchbar';
 import Painting from "./Painting";
 import ErrorPage from "./ErrorPage";
 import CommentsContainer from './CommentsContainer';
 import CommentForm from './CommentForm.js';
 import MyPaintingsContainer from './MyPaintingsContainer';
+import PaintingsContainer from './PaintingsContainer';
 
 function App() {
 
